@@ -28,5 +28,5 @@ export nifi_props_file=${NIFI_HOME}/conf/nifi.properties
 export nifi_toolkit_props_file=${HOME}/.nifi-cli.nifi.properties
 export hostname=$(hostname)
 
-# Set NiFi Max RAM to 80% of total
+# Set NiFi Max RAM to 80% of total.
 sed -i -e "s|^java.arg.3=.*$|java.arg.3=-Xmx$(free -m | awk 'NR==2{printf "%d", $2*0.8 }')m|"  /opt/nifi/nifi-current/conf/bootstrap.conf
